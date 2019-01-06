@@ -55,6 +55,12 @@ a {
   display: flex;
   flex-direction: row;
   padding: 20px;
+  cursor: pointer;
+}
+
+.content:hover{
+  background-color: #D6EAF8;
+  transition-duration: .5s;
 }
 
 .employeeInfo {
@@ -69,4 +75,30 @@ a {
   margin: 10px;
   border: .5px solid #D5D8DC;
   background-color: #ffffff;
+}
+
+#employeeModal{
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+  border: 2px solid #D6EAF8;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  display: none;
+  z-index: 1;
+}
+
+#modalClose{
+  right: 5;
+  top: 5;
+  float: right;
+  background-color: #ffffff;
+  color: #566573;
+  padding: 5px;
+  cursor: pointer;
 }
