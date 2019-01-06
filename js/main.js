@@ -15,7 +15,7 @@ $.ajax({
     $('#content').html(employees);
     console.log(data);
   }
-  
+
 });
 
 employeeContent.addEventListener('click', () => {
