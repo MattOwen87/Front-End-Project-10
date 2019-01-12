@@ -104,3 +104,12 @@ a {
   padding: 5px;
   cursor: pointer;
 }
+
+#modalContent{
+  text-align: center;
+}
+
+
+#searchBar{
+  padding: 10px;
+}
