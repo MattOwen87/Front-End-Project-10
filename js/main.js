@@ -25,6 +25,7 @@ $.ajax({
       let modalEmployee = {
         image: employee.picture.large,
         name: employee.name.first + ' ' + employee.name.last,
+        birthdate: employee.dob.date,
         email: employee.email,
         phone: employee.phone,
         address: employee.location.street,
@@ -51,7 +52,7 @@ DISPLAY MODAL
 function displayModal(index){
   let currentEmployee = modalEmployees[index];
 
-  modalContent.innerHTML = `<img src="${currentEmployee.image}" class="employeeImage"><h1>${currentEmployee.name}</h1><p>${currentEmployee.email}</p><p>${currentEmployee.phone}</p><p>${currentEmployee.address}</p><p>${currentEmployee.city}</p><p>${currentEmployee.state}</p><p>${currentEmployee.code}</p>`;
+  modalContent.innerHTML = `<img src="${currentEmployee.image}" class="employeeImage"><h1>${currentEmployee.name}</h1><p>${currentEmployee.birthdate}</p><p>${currentEmployee.email}</p><p>${currentEmployee.phone}</p><p>${currentEmployee.address}</p><p>${currentEmployee.city}</p><p>${currentEmployee.state}</p><p>${currentEmployee.code}</p>`;
   modal.style.display = 'block';
 }
 
@@ -79,15 +80,29 @@ $("#searchBar").keyup(function(){
 		if(employeeSearch !=""){
 	$("#content li").hide();
 	$("#content li").each(function(){
-		let employeeKeyword = $(this).attr("H1");
+		let employeeKeyword = $(this).find("H1").text();
 
 
 		if (employeeKeyword.indexOf(employeeSearch) >= 0) {
 			$(this).show();
 		}
 
-	});
-} else {
-	$("#content li").show();
-}
-});
+  	});
+  } else {
+  	$("#content li").show();
+  }
+  });
+
+  /********************
+  MODAL ARROW FUNCTION
+  ********************/
+
+  $("#rightArrow").click(function(){
+    $("#modalContent").each(function(){
+      
+    });
+  });
+
+  $("#leftArrow").click(function(){
+
+  });

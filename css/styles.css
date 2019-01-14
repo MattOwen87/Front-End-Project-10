@@ -109,7 +109,30 @@ a {
   text-align: center;
 }
 
+#search{
+  text-align: center;
+}
 
 #searchBar{
+  width: 25%;
   padding: 10px;
+}
+
+#leftArrow{
+  cursor: pointer;
+  font-size: 30px;
+  margin: 20px;
+  float: left;
+}
+
+#rightArrow{
+  cursor: pointer;
+  font-size: 30px;
+    margin: 20px;
+    float: right;
+}
+
+#modalArrows{
+  color: #000000;
+  text-align: center;
 }
