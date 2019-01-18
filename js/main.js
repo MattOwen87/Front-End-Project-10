@@ -50,10 +50,36 @@ DISPLAY MODAL
 
 
 function displayModal(index){
+  index = parseInt(index);
   let currentEmployee = modalEmployees[index];
 
-  modalContent.innerHTML = `<img src="${currentEmployee.image}" class="employeeImage"><h1>${currentEmployee.name}</h1><p>${currentEmployee.birthdate}</p><p>${currentEmployee.email}</p><p>${currentEmployee.phone}</p><p>${currentEmployee.address}</p><p>${currentEmployee.city}</p><p>${currentEmployee.state}</p><p>${currentEmployee.code}</p>`;
+  modalContent.innerHTML = `<img src="${currentEmployee.image}" class="employeeImage"><h1>${currentEmployee.name}</h1><p>${currentEmployee.birthdate}</p><p>${currentEmployee.email}</p><p>${currentEmployee.phone}</p><p>${currentEmployee.address}</p><p>${currentEmployee.city}</p><p>${currentEmployee.state}</p><p>${currentEmployee.code}</p><button id="prev" data-index="-1">Prev</button><button id="next" data-index="+1">Next</button>`;
+
+  $("#next").click(function(){
+    if(index <= 11){
+      index += 1;
+    }
+    if(index > 11){
+      return false;
+    }
+
+    console.log(index);
+  });
+
+  $("#prev").click(function(){
+    if(index >= 1){
+      index -= 1;
+    }
+    if(index < 0){
+      return false;
+    }
+
+    console.log(index);
+  });
+
   modal.style.display = 'block';
+
+
 }
 
 $('#content').on('click', 'LI', (function(){
@@ -99,7 +125,7 @@ $("#searchBar").keyup(function(){
 
   $("#rightArrow").click(function(){
     $("#modalContent").each(function(){
-      
+
     });
   });
 
