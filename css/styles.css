@@ -103,6 +103,14 @@ a {
   color: #566573;
   padding: 5px;
   cursor: pointer;
+  border: none;
+  border-radius: 25%;
+  font-weight: bold;
+}
+
+#modalClose:hover{
+  background-color: #D6EAF8;
+  transition-duration: .5s;
 }
 
 #modalContent{
@@ -110,29 +118,62 @@ a {
 }
 
 #search{
-  text-align: center;
+  margin-left: 50px;
 }
 
 #searchBar{
-  width: 25%;
+  width: 30%;
   padding: 10px;
+  font-family: 'EB Garamond', serif;
 }
 
-#leftArrow{
+#searchBar:focus{
+  background-color: #D6EAF8;
+  color: #566573;
+  transition-duration: .5s;
+}
+
+#next{
   cursor: pointer;
-  font-size: 30px;
+  font-family: 'EB Garamond', serif;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 10px;
+  margin: 20px;
+  float: right;
+  background-color: #ffffff;
+  color: #566573;
+  border: none;
+  border-radius: 25%;
+}
+
+#next:hover{
+  background-color: #D6EAF8;
+  transition-duration: .5s;
+}
+
+#prev{
+  cursor: pointer;
+  font-family: 'EB Garamond', serif;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 10px;
   margin: 20px;
   float: left;
+  background-color: #ffffff;
+  color: #566573;
+  border: none;
+  border-radius: 25%;
 }
 
-#rightArrow{
-  cursor: pointer;
-  font-size: 30px;
-    margin: 20px;
-    float: right;
+#prev:hover{
+  background-color: #D6EAF8;
+  transition-duration: .5s;
 }
 
-#modalArrows{
-  color: #000000;
+#modalDivide{
+  background-color: #ABB2B9;
   text-align: center;
+  margin: 10px;
+  padding: .5px;
 }

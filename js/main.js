@@ -25,9 +25,9 @@ $.ajax({
       let modalEmployee = {
         image: employee.picture.large,
         name: employee.name.first + ' ' + employee.name.last,
-        birthdate: employee.dob.date,
+        birthdate: employee.dob.date.substring(5,7) + '/' + employee.dob.date.substring(8,10) + '/' + employee.dob.date.substring(0,4),
         email: employee.email,
-        phone: employee.phone,
+        phone: employee.cell,
         address: employee.location.street,
         city: employee.location.city,
         state: employee.location.state,
@@ -40,8 +40,6 @@ $.ajax({
     console.log(data);
 
   }
-
-
 });
 
 /********************
@@ -53,7 +51,7 @@ function displayModal(index){
   index = parseInt(index);
   let currentEmployee = modalEmployees[index];
 
-  modalContent.innerHTML = `<img src="${currentEmployee.image}" class="employeeImage"><h1>${currentEmployee.name}</h1><p>${currentEmployee.birthdate}</p><p>${currentEmployee.email}</p><p>${currentEmployee.phone}</p><p>${currentEmployee.address}</p><p>${currentEmployee.city}</p><p>${currentEmployee.state}</p><p>${currentEmployee.code}</p><button id="prev" data-index="-1">Prev</button><button id="next" data-index="+1">Next</button>`;
+  modalContent.innerHTML = `<img src="${currentEmployee.image}" class="employeeImage"><h1>${currentEmployee.name}</h1><p>${currentEmployee.email}</p><p>${currentEmployee.city}</p><div id="modalDivide"></div><p>${currentEmployee.phone}</p><p>${currentEmployee.address}</p><p>${currentEmployee.state}</p><p>${currentEmployee.code}</p><p>${currentEmployee.birthdate}</p><button id="prev" data-index="-1">Prev</button><button id="next" data-index="+1">Next</button>`;
 
   $("#next").click(function(){
     if(index <= 11){
@@ -64,6 +62,7 @@ function displayModal(index){
     }
 
     console.log(index);
+    displayModal(index);
   });
 
   $("#prev").click(function(){
@@ -75,6 +74,7 @@ function displayModal(index){
     }
 
     console.log(index);
+    displayModal(index);
   });
 
   modal.style.display = 'block';
